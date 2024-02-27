@@ -8,5 +8,12 @@ def home():
     return render_template("home.html")
 
 
+@app.route("/api/v1/<word>")
+def translation(word):
+    definition = "SUN"
+    return {"definition": definition,
+            "word": word}
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
