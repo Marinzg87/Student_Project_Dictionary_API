@@ -9,10 +9,10 @@ def home():
 
 
 @app.route("/api/v1/<word>")
-def translation(word):
-    definition = "SUN"
-    return {"definition": definition,
-            "word": word}
+def api(word):
+    definition = word.upper()
+    result_dictionary = {"definition": definition, "word": word}
+    return result_dictionary
 
 
 if __name__ == "__main__":
