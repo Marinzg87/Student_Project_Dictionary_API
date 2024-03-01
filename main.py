@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import pandas as pd
 
 # Create an instance of Flask object
 # __name__ due to the fact, that I want run this script only when the file is run, \
@@ -15,7 +16,9 @@ def home():
 # This will create a link to the API page
 @app.route("/api/v1/<word>")
 def api(word):
-    definition = word.upper()
+    # Read the data to dataframe
+    df = pd.read_csv("dictionary.csv")
+    definition = df.loc[df['word'] == word]['definition'].squeeze()
     result_dictionary = {"definition": definition, "word": word}
     return result_dictionary
 

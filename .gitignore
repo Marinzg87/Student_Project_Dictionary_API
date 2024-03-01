@@ -1,3 +1,13 @@
-/.venv/
-.idea
-/.idea/
+.DS_Store
+
+__pycache__/
+*.pyc
+
+*_env/
+.venv*/
+
+*.sqlite3
+
+.idea*
+/.idea
+.idea*/
